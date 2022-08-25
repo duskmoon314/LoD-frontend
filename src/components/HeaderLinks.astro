@@ -1,0 +1,23 @@
+---
+import { localizePath } from "astro-i18next"
+import HeaderLink from "./HeaderLink.astro"
+
+export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {
+  menu?: boolean
+  navItems: Array<{
+    title: string
+    href: string
+  }>
+  link_class?: string
+}
+
+const { link_class: linkClassName, menu, navItems } = Astro.props as Props
+---
+
+{
+  navItems.map(({ title, href }) => (
+    <HeaderLink href={localizePath(href)} menu={menu} class={linkClassName}>
+      {title}
+    </HeaderLink>
+  ))
+}

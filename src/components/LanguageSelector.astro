@@ -1,0 +1,34 @@
+---
+// Based on [astro-i18next](https://github.com/yassinedoghri/astro-i18next)'s Language Selector
+//
+// MIT License
+//
+// Notice: Cannot import due to its export way
+
+import i18next from "i18next"
+import ISO6991 from "iso-639-1"
+import localeEmoji from "locale-emoji"
+import { localizePath } from "astro-i18next"
+
+const supportedLanguages = i18next.languages
+const currentLanguage = i18next.language
+const { pathname } = Astro.url
+
+const { ...attributes } = Astro.props
+---
+
+<select onchange="location = this.value;" {...attributes}>
+  {
+    supportedLanguages.map((supportedLanguage: string) => {
+      let value = localizePath(pathname, supportedLanguage)
+      const flag = localeEmoji(supportedLanguage) + " "
+      const nativeName = ISO6991.getNativeName(supportedLanguage)
+      const label = flag + nativeName
+      return (
+        <option value={value} selected={supportedLanguage === currentLanguage}>
+          {label}
+        </option>
+      )
+    })
+  }
+</select>

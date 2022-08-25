@@ -1,0 +1,88 @@
+---
+import Icon from "astro-icon"
+import Base from "./Base.astro"
+
+export interface Props {
+  content: {
+    title: string
+    description: string
+    author?: string
+    createdAt?: string
+    updatedAt?: string
+    heroImage?: string
+    github?: string
+    docs?: string
+    crates?: string
+  }
+}
+
+const {
+  content: {
+    title,
+    description,
+    author,
+    createdAt,
+    updatedAt,
+    heroImage,
+    github,
+    docs,
+    crates,
+  },
+} = Astro.props as Props
+---
+
+<Base title={title} description={description} author={author}>
+  <article class="flex flex-col items-center">
+    {
+      heroImage ? (
+        <div
+          class="hero min-h-half-screen"
+          style={`background-image: url(${heroImage});`}
+        >
+          <div class="hero-overlay bg-opacity-70" />
+          <div class="hero-content text-center">
+            <div class="max-w-md">
+              <h1 class="text-5xl font-bold" set:html={title} />
+              <p class="py-6" set:html={description} />
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div class="hero min-h-half-screen bg-base-200">
+          <div class="hero-content text-center">
+            <div class="max-w-md">
+              <h1 class="text-5xl font-bold" set:html={title} />
+              <p class="py-6" set:html={description} />
+            </div>
+          </div>
+        </div>
+      )
+    }
+    <section class="mt-8 max-w-2/5 flex gap-8 items-center justify-around">
+      {
+        crates && (
+          <a href={crates} class="text-inherit">
+            <img src={`https://img.shields.io/crates/v/${title}.svg`} />
+          </a>
+        )
+      }
+      {
+        docs && (
+          <a href={docs} class="text-inherit">
+            <Icon class="w-6" name="icon-park-outline:file-doc" />
+          </a>
+        )
+      }
+      {
+        github && (
+          <a href={github} class="text-inherit">
+            <Icon class="w-6" name="icon-park-outline:github-one" />
+          </a>
+        )
+      }
+    </section>
+    <section class="m-8 prose w-4/5 self-center">
+      <slot />
+    </section>
+  </article>
+</Base>

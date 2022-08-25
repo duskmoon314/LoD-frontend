@@ -1,0 +1,34 @@
+---
+import Icon from "astro-icon"
+
+const today = new Date()
+---
+
+<footer
+  class="footer items-center mt-auto p-4 bg-base-100 text-base-content gap-4"
+>
+  <div class="items-center grid-flow-col">
+    <p>Copyright © {today.getFullYear()} duskmoon314 - All right reserved</p>
+  </div>
+  <div class="items-center grid-flow-col">
+    <p>Powered by</p>
+    <a href="https://astro.build/">
+      <Icon class="h-5" name="vscode-icons:file-type-astro" />
+    </a>
+    <p>and</p>
+    <a href="https://daisyui.com/">
+      <img
+        class="h-5"
+        src="https://raw.githubusercontent.com/saadeghi/files/main/daisyui/logo-4.svg"
+      />
+    </a>
+  </div>
+  <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+    <a href="mailto:kp.campbell.he@duskmoon314.com" class="text-inherit">
+      <Icon class="w-6" name="icon-park-outline:mail-edit" />
+    </a>
+    <a href="https://github.com/duskmoon314" class="text-inherit">
+      <Icon class="w-6" name="icon-park-outline:github-one" />
+    </a>
+  </div>
+</footer>

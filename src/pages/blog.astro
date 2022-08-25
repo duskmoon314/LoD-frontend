@@ -1,0 +1,61 @@
+---
+import i18next, { t, changeLanguage } from "i18next"
+import Base from "@layouts/Base.astro"
+// Use Astro.glob() to fetch all posts, and then sort them by date.
+const posts =
+  i18next.language === "en"
+    ? (await Astro.glob("/src/pages/en/blog/*.{md,mdx}")).sort(
+        (a, b) =>
+          new Date(b.frontmatter.createdAt).valueOf() -
+          new Date(a.frontmatter.createdAt).valueOf()
+      )
+    : (await Astro.glob("/src/pages/blog/*.{md,mdx}")).sort(
+        (a, b) =>
+          new Date(b.frontmatter.createdAt).valueOf() -
+          new Date(a.frontmatter.createdAt).valueOf()
+      )
+
+changeLanguage("zh")
+---
+
+<Base>
+  <ul class="flex flex-col gap-8 mt-4">
+    {
+      posts.map((post) => (
+        <li class="flex justify-center">
+          <a
+            href={post.url}
+            class="card lg:card-side bg-base-100 shadow-2xl w-4/5 min-w-xs"
+          >
+            {post.frontmatter.heroImage && (
+              <figure>
+                <img
+                  src={post.frontmatter.heroImage}
+                  alt={post.frontmatter.title}
+                  width="360"
+                />
+              </figure>
+            )}
+            <div class="card-body">
+              <h2 class="card-title">{post.frontmatter.title}</h2>
+              <div class="flex gap-8">
+                <p class="prose-sm prose-neutral">
+                  {t("updated-at")}
+                  {new Date(
+                    post.frontmatter.updatedAt ?? post.frontmatter.createdAt
+                  ).toLocaleDateString()}
+                </p>
+                <div class="flex gap-2">
+                  {(post.frontmatter.tags ?? []).map((tag: string) => (
+                    <div class="badge badge-outline">{tag}</div>
+                  ))}
+                </div>
+              </div>
+              <p set:html={post.frontmatter.description} />
+            </div>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Base>

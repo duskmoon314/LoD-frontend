@@ -1,0 +1,136 @@
+---
+import Base from "@layouts/Base.astro"
+import Icon from "astro-icon"
+import { t, changeLanguage } from "i18next"
+import { localizePath } from "astro-i18next"
+const posts = (await Astro.glob("/src/pages/blog/*.{md,mdx}"))
+  .sort(
+    (a, b) =>
+      new Date(b.frontmatter.createdAt).valueOf() -
+      new Date(a.frontmatter.createdAt).valueOf()
+  )
+  .slice(0, 3)
+
+changeLanguage("zh")
+---
+
+<Base title={t("site.title")} description={t("site.description")}>
+  <div class="alert alert-warning shadow-lg place-content-center">
+    <div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="stroke-current flex-shrink-0 h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        ><path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+        ></path>
+      </svg>
+      <span>{t("alert")}</span>
+    </div>
+  </div>
+
+  <div class="hero min-h-half-screen bg-base-200">
+    <div class="hero-content text-center">
+      <div class="max-w-md">
+        <h1 class="text-5xl font-bold" set:html={t("site.title")}></h1>
+
+        <p class="py-6" set:html={t("site.description")}></p>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="flex flex-col lg:flex-row items-center gap-16 py-16 place-content-center"
+  >
+    <div class="avatar">
+      <div class="w-32 h-32 rounded-full shadow-2xl">
+        <img src="/icon.png" alt="暮月的Logo" />
+      </div>
+    </div>
+    <div class="card w-4/5 lg:w-3/5 bg-base-100 shadow-2xl">
+      <div class="card-body">
+        <div set:html={t("home.intro")}></div>
+        <div set:html={t("home.license")}></div>
+        <div class="divider"></div>
+        <div class="card-actions justify-end flex-col lg:flex-row">
+          <div class="flex flex-grow flex-row justify-start">
+            <p>{t("home.who-am-i")}</p>
+            <a class="link link-primary" href={localizePath("/about")}
+              >{t("home.about-me")}
+            </a>
+          </div>
+          <div class="divider lg:divider-horizontal"></div>
+          <div class="flex flex-grow flex-row">
+            <p>{t("home.contact-me")}</p>
+            <div class="flex flex-row gap-4 justify-self-end">
+              <a
+                href="https://matrix.to/#/@duskmoon:matrix.org"
+                class="text-inherit"
+              >
+                <Icon class="w-6" name="simple-icons:matrix" />
+              </a>
+              <a
+                href="mailto:kp.campbell.he@duskmoon314.com"
+                class="text-inherit"
+              >
+                <Icon class="w-6" name="icon-park-outline:mail-edit" />
+              </a>
+              <a href="https://github.com/duskmoon314" class="text-inherit">
+                <Icon class="w-6" name="icon-park-outline:github-one" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider my-4"></div>
+
+  <div
+    class="flex flex-col gap-0 mt-4 mb-8 items-center self-center prose w-4/5"
+  >
+    <h2>{t("home.recent-posts")}</h2>
+    {
+      posts.reduce((prev: Element[], curr, idx) => {
+        const currerent_element = (
+          <div class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box w-full">
+            <input type="checkbox" class="peer" />
+            <div class="collapse-title text-base-content peer-checked:bg-base-200 prose flex justify-between">
+              <h2 class="m-0">{curr.frontmatter.title}</h2>
+              <div class="flex gap-2">
+                {(curr.frontmatter.tags ?? []).map((tag: string) => (
+                  <div class="badge badge-outline">{tag}</div>
+                ))}
+              </div>
+            </div>
+            <div class="collapse-content text-base-content peer-checked:bg-base-200 peer-checked:text-base-content">
+              <p set:html={curr.frontmatter.description} />
+              <div class="flex justify-between items-center">
+                <p class="prose-neutral">
+                  {t("updated-at")}
+                  {new Date(
+                    curr.frontmatter.updatedAt ?? curr.frontmatter.createdAt
+                  ).toLocaleDateString()}
+                </p>
+                <a href={curr.url} class="btn btn-primary btn-sm">
+                  {t("home.read-more")}
+                </a>
+              </div>
+            </div>
+          </div>
+        )
+        return idx
+          ? [...prev, <div class="divider" />, currerent_element]
+          : [currerent_element]
+      }, [])
+    }
+    <a href={localizePath("/blog")} class="btn btn-primary mt-8">
+      {t("home.view-all")}
+    </a>
+  </div>
+</Base>

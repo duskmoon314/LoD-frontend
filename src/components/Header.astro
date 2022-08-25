@@ -1,0 +1,88 @@
+---
+import { Icon } from "astro-icon"
+import { t } from "i18next"
+import { localizePath } from "astro-i18next"
+
+import HeaderLinks from "./HeaderLinks.astro"
+import LanguageSelector from "./LanguageSelector.astro"
+
+const navItems: Array<{
+  title: string
+  href: string
+}> = [
+  {
+    title: t("site.nav.home"),
+    href: localizePath("/"),
+  },
+  {
+    title: t("site.nav.about"),
+    href: localizePath("/about"),
+  },
+  {
+    title: t("site.nav.blog"),
+    href: localizePath("/blog"),
+  },
+  {
+    title: t("site.nav.project"),
+    href: localizePath("/project"),
+  },
+]
+---
+
+<header class="navbar bg-base-100 fixed top-0 z-50">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <label tabindex="0" class="btn btn-ghost lg:hidden">
+        <Icon name="icon-park-outline:menu-fold-one" class="h-6 w-6" />
+      </label>
+      <ul
+        tabindex="0"
+        class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary-content rounded-box w-36"
+      >
+        <HeaderLinks menu navItems={navItems} />
+      </ul>
+    </div>
+    <div class="hidden lg:flex items-center">
+      <div class="avatar mx-2">
+        <div class="w-10 rounded-full">
+          <img src="/favicon.ico" alt="logo" />
+        </div>
+      </div>
+      <a class="prose">
+        <h3>{t("site.title")}</h3>
+      </a>
+    </div>
+  </div>
+  <div class="navbar-center">
+    <div class="flex lg:hidden items-center">
+      <div class="avatar mx-2 hidden sm:flex">
+        <div class="w-10 rounded-full">
+          <img src="/favicon.ico" alt="logo" />
+        </div>
+      </div>
+      <a class="prose">
+        <h3>{t("site.title")}</h3>
+      </a>
+    </div>
+    <nav class="tabs hidden lg:flex">
+      <HeaderLinks navItems={navItems} />
+    </nav>
+  </div>
+  <div class="navbar-end">
+    <!-- <button class="btn btn-ghost btn-circle btn-disabled hidden md:flex">
+      <Icon class="w-6" name="icon-park-outline:search" />
+    </button> -->
+    <label class="btn btn-ghost btn-circle swap swap-rotate">
+      <input type="checkbox" data-toggle-theme="night,winter" />
+      <Icon class="swap-on w-6" name="icon-park-outline:moon" />
+      <Icon class="swap-off w-6" name="icon-park-outline:sun-one" />
+    </label>
+    <LanguageSelector class="select select-bordered" />
+  </div>
+</header>
+
+<script>
+  import { themeChange } from "theme-change"
+
+  themeChange()
+</script>
