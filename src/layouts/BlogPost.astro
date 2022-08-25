@@ -1,4 +1,5 @@
 ---
+import i18next from "i18next"
 import Base from "./Base.astro"
 
 export interface Props {
@@ -47,6 +48,25 @@ const {
     <!-- <section></section> -->
     <section class="m-8 prose w-4/5 self-center">
       <slot />
+    </section>
+    <section class="m-8 w-4/5 max-w-3xl self-center">
+      <script
+        src="https://giscus.app/client.js"
+        data-repo="duskmoon314/LoD-frontend"
+        data-repo-id="R_kgDOH4KFfA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOH4KFfM4CRCK4"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang={i18next.language === "zh" ? "zh-CN" : "en"}
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async
+      ></script>
     </section>
   </article>
 </Base>
