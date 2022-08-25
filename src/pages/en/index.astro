@@ -1,15 +1,24 @@
 ---
 import Base from "@layouts/Base.astro"
 import Icon from "astro-icon"
-import { t, changeLanguage } from "i18next"
+import i18next, { t, changeLanguage } from "i18next"
 import { localizePath } from "astro-i18next"
-const posts = (await Astro.glob("/src/pages/blog/*.{md,mdx}"))
-  .sort(
-    (a, b) =>
-      new Date(b.frontmatter.createdAt).valueOf() -
-      new Date(a.frontmatter.createdAt).valueOf()
-  )
-  .slice(0, 3)
+const posts =
+  i18next.language === "en"
+    ? (await Astro.glob("/src/pages/en/blog/*.{md,mdx}"))
+        .sort(
+          (a, b) =>
+            new Date(b.frontmatter.createdAt).valueOf() -
+            new Date(a.frontmatter.createdAt).valueOf()
+        )
+        .slice(0, 3)
+    : (await Astro.glob("/src/pages/blog/*.{md,mdx}"))
+        .sort(
+          (a, b) =>
+            new Date(b.frontmatter.createdAt).valueOf() -
+            new Date(a.frontmatter.createdAt).valueOf()
+        )
+        .slice(0, 3)
 
 changeLanguage("en")
 ---
