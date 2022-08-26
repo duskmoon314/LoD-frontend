@@ -11,7 +11,7 @@
     }
   },
   "home": {
-    "intro": "<h2 class=\"card-title\">Hello, I'm duskmoon</h2><p>Welcome to my personal site \"<b>Lib of Duskmoon</b>\".</p><p>I'm a PhD candidate at Tsinghua University. And I'm also a rookie trying to actively participate in open source community.</p><p>Here are some of my notes, blogs, and introduction to thr projects I maintain.</p>",
+    "intro": "<h2 class=\"card-title\">Hello, I'm duskmoon</h2><p>Welcome to my personal site \"<b>Lib of Duskmoon</b>\".</p><p>I'm a PhD candidate at Tsinghua University. And I'm also a rookie trying to actively participate in open source community.</p><p>Here are some of my notes, blogs, and introduction to the projects I maintain.</p>",
     "license": "Unless otherwise stated, all text content on this site is licensed under the <a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons Attribution-ShareAlike 4.0 International License</a>.<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/4.0/\"><img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by-sa/4.0/80x15.png\" /></a>",
     "who-am-i": "Who am I?",
     "about-me": "About me",

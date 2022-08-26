@@ -6,6 +6,24 @@ module.exports = {
       minHeight: {
         "half-screen": "50vh",
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            // set style of inline math formula
+            'span[class~="math-inline"]': {
+              'mjx-container[jax="SVG"]': {
+                svg: {
+                  display: "inline",
+                },
+              },
+            },
+            "img,svg": {
+              margin: "auto",
+              maxWidth: "100%",
+            },
+          },
+        },
+      },
     },
   },
   plugins: [require("@tailwindcss/typography"), require("daisyui")],

@@ -1,8 +1,10 @@
 {
+  "conventionalCommits.scopes": ["blog"],
+  "cSpell.words": ["astro", "astrojs"],
   "editor.tabSize": 2,
+  "markdown.experimental.validate.fileLinks.enabled": "ignore",
   "prettier.documentSelectors": ["**/*.astro"],
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "cSpell.words": ["astro", "astrojs"]
+  }
 }
