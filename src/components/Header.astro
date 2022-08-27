@@ -5,6 +5,7 @@ import { localizePath } from "astro-i18next"
 
 import HeaderLinks from "./HeaderLinks.astro"
 import LanguageSelector from "./LanguageSelector.astro"
+import ThemeToggle from "./ThemeToggle.svelte"
 
 const navItems: Array<{
   title: string
@@ -72,11 +73,7 @@ const navItems: Array<{
     <!-- <button class="btn btn-ghost btn-circle btn-disabled hidden md:flex">
       <Icon class="w-6" name="icon-park-outline:search" />
     </button> -->
-    <label class="btn btn-ghost btn-circle swap swap-rotate">
-      <input type="checkbox" data-toggle-theme="night,winter" />
-      <Icon class="swap-on w-6" name="icon-park-outline:moon" />
-      <Icon class="swap-off w-6" name="icon-park-outline:sun-one" />
-    </label>
+    <ThemeToggle client:idle />
     <LanguageSelector class="select select-bordered" />
   </div>
 </header>
