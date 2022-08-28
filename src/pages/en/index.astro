@@ -3,6 +3,9 @@ import Base from "@layouts/Base.astro"
 import Icon from "astro-icon"
 import i18next, { t, changeLanguage } from "i18next"
 import { localizePath } from "astro-i18next"
+
+changeLanguage("en")
+
 const posts =
   i18next.language === "en"
     ? (await Astro.glob("/src/pages/en/blog/*.{md,mdx}"))
@@ -19,8 +22,6 @@ const posts =
             new Date(a.frontmatter.createdAt).valueOf()
         )
         .slice(0, 3)
-
-changeLanguage("en")
 ---
 
 <Base title={t("site.title")} description={t("site.description")}>

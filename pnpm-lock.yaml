@@ -10,7 +10,7 @@ specifiers:
   '@tailwindcss/typography': 0.5.4
   '@typescript-eslint/parser': 5.35.1
   astro: 1.1.1
-  astro-i18next: 1.0.0-beta.4
+  astro-i18next: 1.0.0-beta.5
   astro-icon: 0.7.3
   autoprefixer: 10.4.8
   daisyui: 2.24.0
@@ -65,7 +65,7 @@ devDependencies:
   '@tailwindcss/typography': 0.5.4_tailwindcss@3.1.8
   '@typescript-eslint/parser': 5.35.1_yqf6kl63nyoq5megxukfnom5rm
   astro: 1.1.1
-  astro-i18next: 1.0.0-beta.4_astro@1.1.1
+  astro-i18next: 1.0.0-beta.5_astro@1.1.1
   autoprefixer: 10.4.8_postcss@8.4.16
   daisyui: 2.24.0_25hquoklqeoqwmt7fwvvcyxm5e
   eslint: 8.23.0
@@ -1366,8 +1366,8 @@ packages:
       - supports-color
     dev: true
 
-  /astro-i18next/1.0.0-beta.4_astro@1.1.1:
-    resolution: {integrity: sha512-5DXsY/ShIzrjjRGH7nIW3Am5vlrTMgr5Pse+Somllhct5BdyRWEiUDJA+A7b2nYBOXlj/KPJTzDeW1KGvww0HA==}
+  /astro-i18next/1.0.0-beta.5_astro@1.1.1:
+    resolution: {integrity: sha512-naKQ9lplcg8ZqQf11sgPp/5LulZM0Tv7iphMZA81RpeSWmM8Nv/hhJPphOixMKOLanINdmffIzAbtahMBDk+UQ==}
     hasBin: true
     peerDependencies:
       astro: ^1.0.0
