@@ -36,7 +36,7 @@
     "@astrojs/svelte": "1.0.0",
     "@astrojs/tailwind": "1.0.0",
     "@tailwindcss/typography": "0.5.4",
-    "@typescript-eslint/parser": "5.35.1",
+    "@typescript-eslint/parser": "5.36.0",
     "astro": "1.1.1",
     "astro-i18next": "1.0.0-beta.5",
     "autoprefixer": "10.4.8",
