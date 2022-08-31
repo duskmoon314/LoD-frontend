@@ -23,7 +23,7 @@ specifiers:
   locale-emoji: 0.3.0
   postcss: 8.4.16
   prettier: 2.7.1
-  prettier-plugin-astro: 0.5.3
+  prettier-plugin-astro: 0.5.4
   rehype-autolink-headings: 6.1.1
   rehype-mathjax: 4.0.2
   rehype-slug: 5.0.1
@@ -75,7 +75,7 @@ devDependencies:
   locale-emoji: 0.3.0
   postcss: 8.4.16
   prettier: 2.7.1
-  prettier-plugin-astro: 0.5.3
+  prettier-plugin-astro: 0.5.4
   rollup: 2.79.0
   serve: 14.0.1
   svelte: 3.49.0
@@ -90,10 +90,6 @@ packages:
     dependencies:
       '@jridgewell/gen-mapping': 0.1.1
       '@jridgewell/trace-mapping': 0.3.15
-    dev: true
-
-  /@astrojs/compiler/0.23.3:
-    resolution: {integrity: sha512-eBWo0d3DoRDeg2Di1/5YJtOXh5eGFSjJMp1wVoVfoITHR4egdUGgsrDHZTzj0a25M/S9W5S6SpXCyNWcqi8jOA==}
     dev: true
 
   /@astrojs/compiler/0.23.4:
@@ -117,7 +113,7 @@ packages:
     dependencies:
       '@vscode/emmet-helper': 2.8.4
       prettier: 2.7.1
-      prettier-plugin-astro: 0.5.3
+      prettier-plugin-astro: 0.5.4
       source-map: 0.7.4
       typescript: 4.6.4
       vscode-css-languageservice: 6.0.1
@@ -4909,11 +4905,11 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-astro/0.5.3:
-    resolution: {integrity: sha512-g4uJ/7k1rJeIWBifeBgTqzgV5gmMTG+lOmOvUZvtIh1R91aqa+yYMzbysIlsJKRaRyWefejrOpvpIuEePBDAyw==}
+  /prettier-plugin-astro/0.5.4:
+    resolution: {integrity: sha512-ILs/WgUYtKBOn3Zh217/PwjCFtUWEKQjcCFJDevri0hGEBwEnnda9aqSLL0/nhCOmQn/UE7M9zLQvThu970ZHw==}
     engines: {node: ^14.15.0 || >=16.0.0, npm: '>=6.14.0'}
     dependencies:
-      '@astrojs/compiler': 0.23.3
+      '@astrojs/compiler': 0.23.4
       prettier: 2.7.1
       sass-formatter: 0.7.5
       synckit: 0.7.3
