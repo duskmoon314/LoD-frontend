@@ -35,7 +35,7 @@ specifiers:
   remark-toc: 8.0.1
   rollup: 2.79.0
   serve: 14.0.1
-  svelte: 3.49.0
+  svelte: 3.50.0
   tailwindcss: 3.1.8
   theme-change: 2.2.0
   typescript: 4.8.2
@@ -60,7 +60,7 @@ devDependencies:
   '@astrojs/mdx': 0.11.0_rollup@2.79.0
   '@astrojs/rss': 1.0.0
   '@astrojs/sitemap': 1.0.0
-  '@astrojs/svelte': 1.0.0_kgxidzdwq27zcusai3ytam6ihi
+  '@astrojs/svelte': 1.0.0_gzukngxpmlbzkiu3cz7vpamp3y
   '@astrojs/tailwind': 1.0.0
   '@tailwindcss/typography': 0.5.6_tailwindcss@3.1.8
   '@typescript-eslint/parser': 5.36.1_yqf6kl63nyoq5megxukfnom5rm
@@ -78,7 +78,7 @@ devDependencies:
   prettier-plugin-astro: 0.5.4
   rollup: 2.79.0
   serve: 14.0.1
-  svelte: 3.49.0
+  svelte: 3.50.0
   tailwindcss: 3.1.8_postcss@8.4.16
   typescript: 4.8.2
 
@@ -209,17 +209,17 @@ packages:
       zod: 3.18.0
     dev: true
 
-  /@astrojs/svelte/1.0.0_kgxidzdwq27zcusai3ytam6ihi:
+  /@astrojs/svelte/1.0.0_gzukngxpmlbzkiu3cz7vpamp3y:
     resolution: {integrity: sha512-WmvcEe86j/3wL2xWURo1Kxtgh+s0CVys2j7xQboHr0ZeH9TBlkQuacAT8mWccD1/MikhDVqL/1hnF/n+vRKuGw==}
     engines: {node: ^14.18.0 || >=16.12.0}
     peerDependencies:
       svelte: ^3.46.4
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 1.0.2_svelte@3.49.0+vite@3.0.9
+      '@sveltejs/vite-plugin-svelte': 1.0.2_svelte@3.50.0+vite@3.0.9
       postcss-load-config: 3.1.4_postcss@8.4.16
-      svelte: 3.49.0
-      svelte-preprocess: 4.10.7_qbdjx2itat3ptg72apfq3m7hrq
-      svelte2tsx: 0.5.14_k5n4uipe6734vn7334tf7n5ml4
+      svelte: 3.50.0
+      svelte-preprocess: 4.10.7_jnlbijn3s52uudn4sd5rg4igwu
+      svelte2tsx: 0.5.14_25vz5gl6ox2pgh3uo5abz3kk6y
       vite: 3.0.9
     transitivePeerDependencies:
       - '@babel/core'
@@ -743,7 +743,7 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@sveltejs/vite-plugin-svelte/1.0.2_svelte@3.49.0+vite@3.0.9:
+  /@sveltejs/vite-plugin-svelte/1.0.2_svelte@3.50.0+vite@3.0.9:
     resolution: {integrity: sha512-8tTVbNuraeDchBaArNbwaZLpO0feM7BRSdZU5yeM4Clasx2p1p1CYBoWh+VgxZlxiark49HXummkHqKztbl8lA==}
     engines: {node: ^14.18.0 || >= 16}
     peerDependencies:
@@ -759,8 +759,8 @@ packages:
       deepmerge: 4.2.2
       kleur: 4.1.5
       magic-string: 0.26.2
-      svelte: 3.49.0
-      svelte-hmr: 0.14.12_svelte@3.49.0
+      svelte: 3.50.0
+      svelte-hmr: 0.14.12_svelte@3.50.0
       vite: 3.0.9
     transitivePeerDependencies:
       - supports-color
@@ -5717,16 +5717,16 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte-hmr/0.14.12_svelte@3.49.0:
+  /svelte-hmr/0.14.12_svelte@3.50.0:
     resolution: {integrity: sha512-4QSW/VvXuqVcFZ+RhxiR8/newmwOCTlbYIezvkeN6302YFRE8cXy0naamHcjz8Y9Ce3ITTZtrHrIL0AGfyo61w==}
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
     peerDependencies:
       svelte: '>=3.19.0'
     dependencies:
-      svelte: 3.49.0
+      svelte: 3.50.0
     dev: true
 
-  /svelte-preprocess/4.10.7_qbdjx2itat3ptg72apfq3m7hrq:
+  /svelte-preprocess/4.10.7_jnlbijn3s52uudn4sd5rg4igwu:
     resolution: {integrity: sha512-sNPBnqYD6FnmdBrUmBCaqS00RyCsCpj2BG58A1JBswNF7b0OKviwxqVrOL/CKyJrLSClrSeqQv5BXNg2RUbPOw==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
@@ -5775,16 +5775,16 @@ packages:
       postcss-load-config: 3.1.4_postcss@8.4.16
       sorcery: 0.10.0
       strip-indent: 3.0.0
-      svelte: 3.49.0
+      svelte: 3.50.0
       typescript: 4.8.2
     dev: true
 
-  /svelte/3.49.0:
-    resolution: {integrity: sha512-+lmjic1pApJWDfPCpUUTc1m8azDqYCG1JN9YEngrx/hUyIcFJo6VZhj0A1Ai0wqoHcEIuQy+e9tk+4uDgdtsFA==}
+  /svelte/3.50.0:
+    resolution: {integrity: sha512-zXeOUDS7+85i+RxLN+0iB6PMbGH7OhEgjETcD1fD8ZrhuhNFxYxYEHU41xuhkHIulJavcu3PKbPyuCrBxdxskQ==}
     engines: {node: '>= 8'}
     dev: true
 
-  /svelte2tsx/0.5.14_k5n4uipe6734vn7334tf7n5ml4:
+  /svelte2tsx/0.5.14_25vz5gl6ox2pgh3uo5abz3kk6y:
     resolution: {integrity: sha512-/9hGkIUMVwZDJoERS6k1x+y6Ir+PpkxbL/UWQ2+RhK/PwUoIaDTCfw79/H1bgYNUTr/7ZaYanJGPuaWARNbbyQ==}
     peerDependencies:
       svelte: ^3.24
@@ -5792,7 +5792,7 @@ packages:
     dependencies:
       dedent-js: 1.0.1
       pascal-case: 3.1.2
-      svelte: 3.49.0
+      svelte: 3.50.0
       typescript: 4.8.2
     dev: true
 
