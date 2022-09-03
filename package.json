@@ -43,7 +43,7 @@
     "daisyui": "2.24.0",
     "eslint": "8.23.0",
     "eslint-config-prettier": "8.5.0",
-    "eslint-plugin-astro": "0.17.1",
+    "eslint-plugin-astro": "0.18.0",
     "eslint-plugin-jsx-a11y": "6.6.1",
     "locale-emoji": "0.3.0",
     "postcss": "8.4.16",
