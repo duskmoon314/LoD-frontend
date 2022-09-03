@@ -16,7 +16,7 @@ specifiers:
   daisyui: 2.24.0
   eslint: 8.23.0
   eslint-config-prettier: 8.5.0
-  eslint-plugin-astro: 0.17.1
+  eslint-plugin-astro: 0.18.0
   eslint-plugin-jsx-a11y: 6.6.1
   i18next-fs-backend: 1.1.5
   iconify-icon: 1.0.0-beta.3
@@ -70,7 +70,7 @@ devDependencies:
   daisyui: 2.24.0_25hquoklqeoqwmt7fwvvcyxm5e
   eslint: 8.23.0
   eslint-config-prettier: 8.5.0_eslint@8.23.0
-  eslint-plugin-astro: 0.17.1_eslint@8.23.0
+  eslint-plugin-astro: 0.18.0_eslint@8.23.0
   eslint-plugin-jsx-a11y: 6.6.1_eslint@8.23.0
   locale-emoji: 0.3.0
   postcss: 8.4.16
@@ -1114,11 +1114,6 @@ packages:
       '@typescript-eslint/visitor-keys': 5.36.1
     dev: true
 
-  /@typescript-eslint/types/5.33.1:
-    resolution: {integrity: sha512-7K6MoQPQh6WVEkMrMW5QOA5FO+BOwzHSNd0j3+BlBwd6vtzfZceJ8xJ7Um2XDi/O3umS8/qDX6jdy2i7CijkwQ==}
-    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
-    dev: true
-
   /@typescript-eslint/types/5.36.1:
     resolution: {integrity: sha512-jd93ShpsIk1KgBTx9E+hCSEuLCUFwi9V/urhjOWnOaksGZFbTOxAT47OH2d4NLJnLhkVD+wDbB48BuaycZPLBg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -1348,16 +1343,16 @@ packages:
     hasBin: true
     dev: true
 
-  /astro-eslint-parser/0.5.1:
-    resolution: {integrity: sha512-es63TAA7vjgV8aI5pUOXqoxa9JHelqzFSk1qOVSCGkeoAMayrr7BdFt9waVWyXyIcOjTXJlQa1pM832bEaCS2Q==}
+  /astro-eslint-parser/0.6.0:
+    resolution: {integrity: sha512-r19bK7HcXgLOxVEdw937TluMmi2LVqJq2eGfKADVRIDnMF2UhLa/H3K4E/C2OD9+4tGgrvOUU19Tjt4PV8lvFQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     dependencies:
       '@astrojs/compiler': 0.23.4
       '@typescript-eslint/types': 5.36.1
+      astrojs-compiler-sync: 0.2.0_@astrojs+compiler@0.23.4
       debug: 4.3.4
       eslint-visitor-keys: 3.3.0
-      espree: 9.3.3
-      synckit: 0.8.3
+      espree: 9.4.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1457,6 +1452,16 @@ packages:
       - supports-color
       - terser
       - ts-node
+    dev: true
+
+  /astrojs-compiler-sync/0.2.0_@astrojs+compiler@0.23.4:
+    resolution: {integrity: sha512-mXXDgPZLMgSH6qOTomsh0p2qZRiBU/fYNsBLalsFqjlmL2waqczVoI6ele1PO4QfRi0rfq7FhbcGiriXwLGRzg==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    peerDependencies:
+      '@astrojs/compiler': '>=0.18.0'
+    dependencies:
+      '@astrojs/compiler': 0.23.4
+      synckit: 0.8.3
     dev: true
 
   /asynckit/0.4.0:
@@ -2464,14 +2469,14 @@ packages:
       eslint: 8.23.0
     dev: true
 
-  /eslint-plugin-astro/0.17.1_eslint@8.23.0:
-    resolution: {integrity: sha512-G2S2zAaDokH2v7O+nzcd0iFskGJ1ohANhQpsFwaAqDPyn+GolFl4zSCnoQefLZ+ONEeZkZ8Jp7Imvbo3FI3LOA==}
+  /eslint-plugin-astro/0.18.0_eslint@8.23.0:
+    resolution: {integrity: sha512-TNh5KKyDP9xqavDbJs2dQa15lazeXlhHD06yhhEVGKcnkpO5wHIvNuz+DVp5gZsT4spnJH09MCuXitqsy0DqvQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=7.0.0'
     dependencies:
-      '@typescript-eslint/types': 5.33.1
-      astro-eslint-parser: 0.5.1
+      '@typescript-eslint/types': 5.36.1
+      astro-eslint-parser: 0.6.0
       eslint: 8.23.0
       eslint-utils: 3.0.0_eslint@8.23.0
       postcss: 8.4.16
@@ -2583,15 +2588,6 @@ packages:
     resolution: {integrity: sha512-U1suiZ2oDVWv4zPO56S0NcR5QriEahGtdN2OR6FiOG4WJvcjBVFB0qI4+eKoWFH483PKGuLuu6V8Z4T5g63UVA==}
     engines: {node: '>=6'}
     dev: false
-
-  /espree/9.3.3:
-    resolution: {integrity: sha512-ORs1Rt/uQTqUKjDdGCyrtYxbazf5umATSf/K4qxjmZHORR6HJk+2s/2Pqe+Kk49HHINC/xNIrGfgh8sZcll0ng==}
-    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
-    dependencies:
-      acorn: 8.8.0
-      acorn-jsx: 5.3.2_acorn@8.8.0
-      eslint-visitor-keys: 3.3.0
-    dev: true
 
   /espree/9.4.0:
     resolution: {integrity: sha512-DQmnRpLj7f6TgN/NYb0MTzJXL+vJF9h3pHy4JhCIs3zwcgez8xmGg3sXHcEO97BrmO2OSvCwMdfdlyl+E9KjOw==}
