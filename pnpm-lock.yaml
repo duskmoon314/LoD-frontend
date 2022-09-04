@@ -7,7 +7,7 @@ specifiers:
   '@astrojs/sitemap': 1.0.0
   '@astrojs/svelte': 1.0.0
   '@astrojs/tailwind': 1.0.0
-  '@tailwindcss/typography': 0.5.6
+  '@tailwindcss/typography': 0.5.7
   '@typescript-eslint/parser': 5.36.1
   astro: 1.1.5
   astro-i18next: 1.0.0-beta.7
@@ -62,7 +62,7 @@ devDependencies:
   '@astrojs/sitemap': 1.0.0
   '@astrojs/svelte': 1.0.0_gzukngxpmlbzkiu3cz7vpamp3y
   '@astrojs/tailwind': 1.0.0
-  '@tailwindcss/typography': 0.5.6_tailwindcss@3.1.8
+  '@tailwindcss/typography': 0.5.7_tailwindcss@3.1.8
   '@typescript-eslint/parser': 5.36.1_yqf6kl63nyoq5megxukfnom5rm
   astro: 1.1.5
   astro-i18next: 1.0.0-beta.7_astro@1.1.5
@@ -761,8 +761,8 @@ packages:
       - supports-color
     dev: true
 
-  /@tailwindcss/typography/0.5.6_tailwindcss@3.1.8:
-    resolution: {integrity: sha512-d7gNgMl43SmUlC3H7UFWuDVtgU6Slr0h4k0idVfwZ/gFRpjTgFpkD3WIs8AhvwELmWvhI8GwklAeInrhXxFu7A==}
+  /@tailwindcss/typography/0.5.7_tailwindcss@3.1.8:
+    resolution: {integrity: sha512-JTTSTrgZfp6Ki4svhPA4mkd9nmQ/j9EfE7SbHJ1cLtthKkpW2OxsFXzSmxbhYbEkfNIyAyhle5p4SYyKRbz/jg==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
     dependencies:
