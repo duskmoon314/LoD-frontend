@@ -13,7 +13,7 @@ specifiers:
   astro-i18next: 1.0.0-beta.7
   astro-icon: 0.7.3
   autoprefixer: 10.4.8
-  daisyui: 2.24.0
+  daisyui: 2.25.0
   eslint: 8.23.0
   eslint-config-prettier: 8.5.0
   eslint-plugin-astro: 0.18.0
@@ -67,7 +67,7 @@ devDependencies:
   astro: 1.1.5
   astro-i18next: 1.0.0-beta.7_astro@1.1.5
   autoprefixer: 10.4.8_postcss@8.4.16
-  daisyui: 2.24.0_25hquoklqeoqwmt7fwvvcyxm5e
+  daisyui: 2.25.0_25hquoklqeoqwmt7fwvvcyxm5e
   eslint: 8.23.0
   eslint-config-prettier: 8.5.0_eslint@8.23.0
   eslint-plugin-astro: 0.18.0_eslint@8.23.0
@@ -1724,8 +1724,8 @@ packages:
       cssom: 0.3.8
     dev: false
 
-  /daisyui/2.24.0_25hquoklqeoqwmt7fwvvcyxm5e:
-    resolution: {integrity: sha512-Fdu/4LCdTfWLWAbCuPxvnaRotEfJ+hVPgZ2kv/aUk9RZ00Yk8fGdJtIf0kXJ3IgUKOr8rCXUpfQY6DQU9usPCQ==}
+  /daisyui/2.25.0_25hquoklqeoqwmt7fwvvcyxm5e:
+    resolution: {integrity: sha512-tv2sFHMOCEr+3A2JOFMaFjV6O/tkXYrytCSptXU8GRS7FDCR0pUmHA/o6K+3nydor7rQ06gMyVbCDHE9WdMW0Q==}
     peerDependencies:
       autoprefixer: ^10.0.2
       postcss: ^8.1.6
