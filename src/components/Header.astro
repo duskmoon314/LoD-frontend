@@ -6,6 +6,7 @@ import { localizePath } from "astro-i18next"
 import HeaderLinks from "./HeaderLinks.astro"
 import LanguageSelector from "./LanguageSelector.astro"
 import ThemeToggle from "./ThemeToggle.svelte"
+import Search from "./Search"
 
 const navItems: Array<{
   title: string
@@ -73,6 +74,7 @@ const navItems: Array<{
     <!-- <button class="btn btn-ghost btn-circle btn-disabled hidden md:flex">
       <Icon class="w-6" name="icon-park-outline:search" />
     </button> -->
+    <Search client:idle />
     <ThemeToggle client:idle />
     <LanguageSelector class="select select-bordered" />
   </div>

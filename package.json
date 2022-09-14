@@ -14,6 +14,7 @@
     "gen-local": "astro-i18next generate"
   },
   "dependencies": {
+    "@docsearch/react": "3",
     "astro-icon": "0.7.3",
     "i18next-fs-backend": "1.1.5",
     "iconify-icon": "1.0.0",
@@ -31,11 +32,13 @@
   "devDependencies": {
     "@astrojs/image": "0.5.1",
     "@astrojs/mdx": "0.11.1",
+    "@astrojs/react": "^1.1.2",
     "@astrojs/rss": "1.0.0",
     "@astrojs/sitemap": "1.0.0",
     "@astrojs/svelte": "1.0.0",
     "@astrojs/tailwind": "1.0.0",
     "@tailwindcss/typography": "0.5.7",
+    "@types/react": "^18.0.20",
     "@typescript-eslint/parser": "5.36.2",
     "astro": "1.1.6",
     "astro-i18next": "1.0.0-beta.9",
@@ -49,6 +52,8 @@
     "postcss": "8.4.16",
     "prettier": "2.7.1",
     "prettier-plugin-astro": "0.5.4",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "rollup": "2.79.0",
     "serve": "14.0.1",
     "svelte": "3.50.0",
