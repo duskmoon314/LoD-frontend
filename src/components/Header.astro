@@ -1,6 +1,6 @@
 ---
 import { Icon } from "astro-icon"
-import { t } from "i18next"
+import i18next, { t } from "i18next"
 import { localizePath } from "astro-i18next"
 
 import HeaderLinks from "./HeaderLinks.astro"
@@ -74,7 +74,7 @@ const navItems: Array<{
     <!-- <button class="btn btn-ghost btn-circle btn-disabled hidden md:flex">
       <Icon class="w-6" name="icon-park-outline:search" />
     </button> -->
-    <Search client:idle />
+    <Search client:idle lang={i18next.language} />
     <ThemeToggle client:idle />
     <LanguageSelector class="select select-bordered" />
   </div>
