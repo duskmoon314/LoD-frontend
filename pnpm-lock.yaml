@@ -2,9 +2,9 @@ lockfileVersion: 5.4
 
 specifiers:
   '@algolia/client-search': ^4.14.2
-  '@astrojs/image': 0.7.0
+  '@astrojs/image': 0.7.1
   '@astrojs/mdx': 0.11.1
-  '@astrojs/react': ^1.1.3
+  '@astrojs/react': 1.1.4
   '@astrojs/rss': 1.0.1
   '@astrojs/sitemap': 1.0.0
   '@astrojs/svelte': 1.0.0
@@ -13,8 +13,8 @@ specifiers:
   '@tailwindcss/typography': 0.5.7
   '@types/react': ^18.0.20
   '@typescript-eslint/parser': 5.37.0
-  astro: 1.2.6
-  astro-i18next: 1.0.0-beta.10
+  astro: 1.3.0
+  astro-i18next: 1.0.0-beta.11
   astro-icon: 0.7.3
   autoprefixer: 10.4.11
   daisyui: 2.28.0
@@ -64,9 +64,9 @@ dependencies:
   theme-change: 2.2.0
 
 devDependencies:
-  '@astrojs/image': 0.7.0
+  '@astrojs/image': 0.7.1
   '@astrojs/mdx': 0.11.1_rollup@2.79.0
-  '@astrojs/react': 1.1.3_biqbaboplfbrettd7655fr4n2y
+  '@astrojs/react': 1.1.4_biqbaboplfbrettd7655fr4n2y
   '@astrojs/rss': 1.0.1
   '@astrojs/sitemap': 1.0.0
   '@astrojs/svelte': 1.0.0_snqnsttluzgwj6kbxzouwakc4q
@@ -74,8 +74,8 @@ devDependencies:
   '@tailwindcss/typography': 0.5.7_tailwindcss@3.1.8
   '@types/react': 18.0.20
   '@typescript-eslint/parser': 5.37.0_irgkl5vooow2ydyo6aokmferha
-  astro: 1.2.6
-  astro-i18next: 1.0.0-beta.10_astro@1.2.6
+  astro: 1.3.0
+  astro-i18next: 1.0.0-beta.11_astro@1.3.0
   autoprefixer: 10.4.11_postcss@8.4.16
   daisyui: 2.28.0_6b4luod745iryv24jvdbvzbbsa
   eslint: 8.23.1
@@ -227,8 +227,8 @@ packages:
     resolution: {integrity: sha512-xZ81C/oMfExdF18I1Tyd2BKKzBqO+qYYctSy4iCwH4UWSo/4Y8A8MAzV1hG67uuE7hFRourSl6H5KUbhyChv/A==}
     dev: true
 
-  /@astrojs/image/0.7.0:
-    resolution: {integrity: sha512-0P2Q0NbU1Y8iBDsJWes9qME2PHaiLOz8G7iFDJtWB+a42Ur/Awf9kxrBFX19siotR5kCX+9kTqZmhAp73SYRwQ==}
+  /@astrojs/image/0.7.1:
+    resolution: {integrity: sha512-T7oNQUwkQ848zZARZZy8TxyTRcgMl0B0+bcHKrXudOr3gpjLFyY+NPR7QTCFq2PnNGA48wUGi4MeX/fu1ASPEw==}
     dependencies:
       '@altano/tiny-async-pool': 1.0.2
       image-size: 1.0.2
@@ -237,15 +237,15 @@ packages:
       sharp: 0.30.7
     dev: true
 
-  /@astrojs/language-server/0.23.3:
-    resolution: {integrity: sha512-ROoMKo37NZ76pE/A2xHfjDlgfsNnFmkhL4+Wifs0L855n73SUCbnXz7ZaQktIGAq2Te2TpSjAawiOx0q9L5qeg==}
+  /@astrojs/language-server/0.26.2:
+    resolution: {integrity: sha512-9nkfdd6CMXLDIJojnwbYu5XrYfOI+g63JlktOlpFCwFjFNpm1u0e/+pXXmj6Zs+PkSTo0kV1UM77dRKRS5OC1Q==}
     hasBin: true
     dependencies:
       '@vscode/emmet-helper': 2.8.4
+      events: 3.3.0
       prettier: 2.7.1
       prettier-plugin-astro: 0.5.4
       source-map: 0.7.4
-      typescript: 4.6.4
       vscode-css-languageservice: 6.1.1
       vscode-html-languageservice: 5.0.2
       vscode-languageserver: 8.0.2
@@ -255,14 +255,15 @@ packages:
       vscode-uri: 3.0.5
     dev: true
 
-  /@astrojs/markdown-remark/1.1.1:
-    resolution: {integrity: sha512-eOvrqejecgeRLUXOdBfb0VoMppe7J80TlazaDnu4tVDdTG4nyuspO0CTPr9nzt6rbW5iLIh4KEUUuOk+z8n8uQ==}
+  /@astrojs/markdown-remark/1.1.2:
+    resolution: {integrity: sha512-afZWKRX7HFq1DdXq1jsUiqYee67Ln0Qan0yNgjNP2Nht0dxYD6JAK40+uiptKiRmP73cQjAVLGh54sgrruBDwA==}
     dependencies:
       '@astrojs/micromark-extension-mdx-jsx': 1.0.3
       '@astrojs/prism': 1.0.1
       acorn: 8.8.0
       acorn-jsx: 5.3.2_acorn@8.8.0
       github-slugger: 1.4.0
+      hast-util-to-html: 8.0.3
       mdast-util-mdx-expression: 1.3.0
       mdast-util-mdx-jsx: 1.2.0
       micromark-extension-mdx-expression: 1.0.3
@@ -328,8 +329,8 @@ packages:
       prismjs: 1.29.0
     dev: true
 
-  /@astrojs/react/1.1.3_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-awhAEPvJslewJ3Txeapw6LiZtU8RqZrDiequeNDmwQt6iz4Ltn3nJPROKxv4cKesAHEpAZhXWM1q2HhpxWFW0Q==}
+  /@astrojs/react/1.1.4_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-eTIXRjvyrDRkMewL5KrbhkF+zl+KSkCgL7k8/BBMXPTUrtOZZY5N5oZbjFtvjxBSQ/dhMWp9g+SwloDldN5ZDg==}
     engines: {node: ^14.18.0 || >=16.12.0}
     peerDependencies:
       react: ^17.0.2 || ^18.0.0
@@ -1412,16 +1413,16 @@ packages:
       - supports-color
     dev: true
 
-  /astro-i18next/1.0.0-beta.10_astro@1.2.6:
-    resolution: {integrity: sha512-xIJjJOFt2B/ipYszrxxpLWCh2WAgb4sftZApP1AKLBKgTrCLOL4feMZ0jzPCj2yRQ4rBLW0V81cH5Yrfz8hAcg==}
+  /astro-i18next/1.0.0-beta.11_astro@1.3.0:
+    resolution: {integrity: sha512-5sp84rtc9279KD/QQppuK8/nlS4+aDht0Gc9fzWAwIZGwi8lm85VB29J4smWseNH6aFwSJza3/x8ny8AQyYabg==}
     hasBin: true
     peerDependencies:
       astro: ^1.0.0
     dependencies:
       '@proload/core': 0.3.3
       '@proload/plugin-tsm': 0.2.1_@proload+core@0.3.3
-      astro: 1.2.6
-      i18next: 21.9.1
+      astro: 1.3.0
+      i18next: 21.9.2
       iso-639-1: 2.1.15
       locale-emoji: 0.3.0
     dev: true
@@ -1434,14 +1435,14 @@ packages:
       svgo: 2.8.0
     dev: false
 
-  /astro/1.2.6:
-    resolution: {integrity: sha512-u6s5EH6+F/IpNkjJJ2RAKMWmBIOVz4AozjyW7aD0hsiGkVF0VYu7AqNWO3TTG6WQ6c9YbosDpfj+JKTT+S/JhA==}
+  /astro/1.3.0:
+    resolution: {integrity: sha512-cWBtLkkUcj38J0knrTaZvyoVFJxjOAWPRbECIXFxvGZ/ASNr+FNumeUk/u3uAGIF0pbqEgc+5zAvmPoe0pCd9w==}
     engines: {node: ^14.18.0 || >=16.12.0, npm: '>=6.14.0'}
     hasBin: true
     dependencies:
       '@astrojs/compiler': 0.24.0
-      '@astrojs/language-server': 0.23.3
-      '@astrojs/markdown-remark': 1.1.1
+      '@astrojs/language-server': 0.26.2
+      '@astrojs/markdown-remark': 1.1.2
       '@astrojs/telemetry': 1.0.0
       '@astrojs/webapi': 1.0.0
       '@babel/core': 7.19.1
@@ -1491,9 +1492,10 @@ packages:
       strip-ansi: 7.0.1
       supports-esm: 1.0.0
       tsconfig-resolver: 3.0.1
+      typescript: 4.8.3
       unist-util-visit: 4.1.1
       vfile: 5.3.5
-      vite: 3.1.0
+      vite: 3.1.3
       yargs-parser: 21.1.1
       zod: 3.19.1
     transitivePeerDependencies:
@@ -2913,6 +2915,11 @@ packages:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
 
+  /events/3.3.0:
+    resolution: {integrity: sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==}
+    engines: {node: '>=0.8.x'}
+    dev: true
+
   /execa/5.1.1:
     resolution: {integrity: sha512-8uSpZZocAZRBAPIEINJj3Lo9HyGitllczc27Eh5YYojjMFMn8yHMDMaUHE2Jqfq05D/wucwI4JGURyXt1vchyg==}
     engines: {node: '>=10'}
@@ -3474,8 +3481,8 @@ packages:
     resolution: {integrity: sha512-raTel3EfshiUXxR0gvmIoqp75jhkj8+7R1LjB006VZKPTFBbXyx6TlUVhb8Z9+7ahgpFbcQg1QWVOdf/iNzI5A==}
     dev: false
 
-  /i18next/21.9.1:
-    resolution: {integrity: sha512-ITbDrAjbRR73spZAiu6+ex5WNlHRr1mY+acDi2ioTHuUiviJqSz269Le1xHAf0QaQ6GgIHResUhQNcxGwa/PhA==}
+  /i18next/21.9.2:
+    resolution: {integrity: sha512-00fVrLQOwy45nm3OtC9l1WiLK3nJlIYSljgCt0qzTaAy65aciMdRy9GsuW+a2AtKtdg9/njUGfRH30LRupV7ZQ==}
     dependencies:
       '@babel/runtime': 7.19.0
     dev: true
@@ -6234,12 +6241,6 @@ packages:
     engines: {node: '>=12.20'}
     dev: true
 
-  /typescript/4.6.4:
-    resolution: {integrity: sha512-9ia/jWHIEbo49HfjrLGfKbZSuWo9iTMwXO+Ca3pRsSpbsMbc7/IU8NKdCZVRRBafVPGnoJeFL76ZOAA84I9fEg==}
-    engines: {node: '>=4.2.0'}
-    hasBin: true
-    dev: true
-
   /typescript/4.8.3:
     resolution: {integrity: sha512-goMHfm00nWPa8UvR/CPSvykqf6dVV8x/dp0c5mFTMTIu0u0FlGWRioyy7Nn0PGAdHxpJZnuO/ut+PpQ8UiHAig==}
     engines: {node: '>=4.2.0'}
@@ -6428,8 +6429,8 @@ packages:
       unist-util-stringify-position: 3.0.2
       vfile-message: 3.1.2
 
-  /vite/3.1.0:
-    resolution: {integrity: sha512-YBg3dUicDpDWFCGttmvMbVyS9ydjntwEjwXRj2KBFwSB8SxmGcudo1yb8FW5+M/G86aS8x828ujnzUVdsLjs9g==}
+  /vite/3.1.2:
+    resolution: {integrity: sha512-wTDKPkiVbeT+drTPdkuvjVIC/2vKKUc1w3qNOuwgpyvPCZF6fvdxB5v5WEcCsqaYea0zrwA4+XialJKCHM3oVQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -6455,8 +6456,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vite/3.1.2:
-    resolution: {integrity: sha512-wTDKPkiVbeT+drTPdkuvjVIC/2vKKUc1w3qNOuwgpyvPCZF6fvdxB5v5WEcCsqaYea0zrwA4+XialJKCHM3oVQ==}
+  /vite/3.1.3:
+    resolution: {integrity: sha512-/3XWiktaopByM5bd8dqvHxRt5EEgRikevnnrpND0gRfNkrMrPaGGexhtLCzv15RcCMtV2CLw+BPas8YFeSG0KA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
