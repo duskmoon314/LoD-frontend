@@ -8,7 +8,7 @@ RUN pnpm fetch
 
 COPY . .
 
-RUN pnpm install --offline
+RUN pnpm install --offline || pnpm install
 RUN pnpm build
 
 FROM node:current-alpine AS app
