@@ -76,12 +76,6 @@ const navItems: Array<{
     </button> -->
     <Search client:idle lang={i18next.language} />
     <ThemeToggle client:idle />
-    <LanguageSelector class="select select-bordered" />
+    <LanguageSelector class="select select-bordered text-2xl" />
   </div>
 </header>
-
-<script>
-  import { themeChange } from "theme-change"
-
-  themeChange()
-</script>

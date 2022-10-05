@@ -110,8 +110,8 @@ const posts =
         const currerent_element = (
           <div class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box w-full">
             <input type="checkbox" class="peer" />
-            <div class="collapse-title text-base-content peer-checked:bg-base-200 prose flex justify-between">
-              <h2 class="m-0">{curr.frontmatter.title}</h2>
+            <div class="collapse-title text-base-content peer-checked:bg-base-200 prose flex flex-col gap-4 justify-between">
+              <h3 class="m-0">{curr.frontmatter.title}</h3>
               <div class="flex gap-2">
                 {(curr.frontmatter.tags ?? []).map((tag: string) => (
                   <div class="badge badge-outline">{tag}</div>

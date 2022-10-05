@@ -14,6 +14,29 @@ export interface Props {
 const { title, description, author, image = "/icon.png" } = Astro.props
 ---
 
+<!-- Set theme -->
+<script is:inline>
+  // ☝️ This script prevent the FART effect.
+  if (localStorage.getItem("theme") === null) {
+    const theme = window.matchMedia("(prefers-color-scheme: dark").matches
+      ? "night"
+      : "winter"
+    document.documentElement.setAttribute("data-theme", theme)
+  } else
+    document.documentElement.setAttribute(
+      "data-theme",
+      localStorage.getItem("theme")
+    )
+  // "theme" LocalStorage value is set by the package to remember user preference.
+  // The value is checked and applyed before rendering anything.
+</script>
+<script>
+  import { themeChange } from "theme-change"
+  themeChange()
+  // 👆 you could import the CDN directly instead of these two lines
+</script>
+<!-- Modified from https://github.com/saadeghi/theme-change -->
+
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
