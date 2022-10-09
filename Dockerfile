@@ -11,14 +11,11 @@ COPY . .
 RUN pnpm install --offline || pnpm install
 RUN pnpm build
 
-FROM node:current-alpine AS app
-WORKDIR /home/node/app
-ENV NODE_ENV=production
-
-RUN npm i -g serve
+FROM svenstaro/miniserve:alpine AS app
+WORKDIR /home/app
 
 COPY --from=builder /home/node/app/dist ./dist
 
 EXPOSE 31415
 
-CMD serve dist -p 31415
+ENTRYPOINT [ "/app/miniserve", "-p", "31415", "--index", "index.html", "dist" ]
