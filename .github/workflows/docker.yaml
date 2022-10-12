@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -35,7 +38,7 @@ jobs:
         with:
           file: Dockerfile
           platforms: linux/amd64
-          push: true
+          push: ${{ github.event_name != 'pull_request' }}
           tags: |
             duskmoon/lod:frontend
             ghcr.io/duskmoon314/lod:frontend
