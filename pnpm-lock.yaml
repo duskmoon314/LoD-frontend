@@ -22,7 +22,7 @@ specifiers:
   eslint-config-prettier: ^8.5.0
   eslint-plugin-astro: ^0.20.0
   eslint-plugin-jsx-a11y: ^6.6.1
-  i18next-fs-backend: ^1.1.5
+  i18next-fs-backend: ^2.0.0
   iconify-icon: ^1.0.0
   locale-emoji: ^0.3.0
   postcss: ^8.4.16
@@ -50,7 +50,7 @@ dependencies:
   '@algolia/client-search': 4.14.2
   '@docsearch/react': 3.2.1_thffifitxoli4xcvvc7l6wxeku
   astro-icon: 0.7.3
-  i18next-fs-backend: 1.1.5
+  i18next-fs-backend: 2.0.0
   iconify-icon: 1.0.0
   rehype-autolink-headings: 6.1.1
   rehype-mathjax: 4.0.2
@@ -3441,8 +3441,8 @@ packages:
     engines: {node: '>=12.20.0'}
     dev: true
 
-  /i18next-fs-backend/1.1.5:
-    resolution: {integrity: sha512-raTel3EfshiUXxR0gvmIoqp75jhkj8+7R1LjB006VZKPTFBbXyx6TlUVhb8Z9+7ahgpFbcQg1QWVOdf/iNzI5A==}
+  /i18next-fs-backend/2.0.0:
+    resolution: {integrity: sha512-zlwzcoUKlveoRt/SxgeP8i/6p1rxwxZ+x0w4sfCTY1zgUlhhnoxBSRX3GjVIsDJm5mky8Hpr//UX93UIknK7yQ==}
     dev: false
 
   /i18next/21.9.2:
