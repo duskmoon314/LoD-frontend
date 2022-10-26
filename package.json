@@ -17,7 +17,7 @@
     "@algolia/client-search": "^4.14.2",
     "@docsearch/react": "^3.2.1",
     "astro-icon": "^0.7.3",
-    "i18next-fs-backend": "^1.1.5",
+    "i18next-fs-backend": "^2.0.0",
     "iconify-icon": "^1.0.0",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-mathjax": "^4.0.2",
