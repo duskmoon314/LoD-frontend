@@ -5,7 +5,7 @@ specifiers:
   '@astrojs/image': ^0.11.0
   '@astrojs/mdx': ^0.11.1
   '@astrojs/react': ^1.1.4
-  '@astrojs/rss': ^1.0.1
+  '@astrojs/rss': ^2.0.0
   '@astrojs/sitemap': ^1.0.0
   '@astrojs/svelte': ^1.0.0
   '@astrojs/tailwind': ^2.0.1
@@ -67,7 +67,7 @@ devDependencies:
   '@astrojs/image': 0.11.0
   '@astrojs/mdx': 0.11.1_rollup@3.0.0
   '@astrojs/react': 1.1.4_biqbaboplfbrettd7655fr4n2y
-  '@astrojs/rss': 1.0.1
+  '@astrojs/rss': 2.0.0
   '@astrojs/sitemap': 1.0.0
   '@astrojs/svelte': 1.0.0_knstvywwbir4a3hirwahwb4ipi
   '@astrojs/tailwind': 2.0.1_tailwindcss@3.1.8
@@ -355,8 +355,8 @@ packages:
       - supports-color
     dev: true
 
-  /@astrojs/rss/1.0.1:
-    resolution: {integrity: sha512-CgfL1vSnHKZDUoSWVuRd6Z/s/2Hrazt9J3f4lKxTF/SwN28zJ+81e2obnOoxGhw5SfLNOqN/VEyHrGSJofaIRQ==}
+  /@astrojs/rss/2.0.0:
+    resolution: {integrity: sha512-qXsmyq2HhnKRA85US6GLelT47VLhdtS0bNq88umqfB2uneB9vWHSLnOJjhN9rv0mUSQjsFYytF4IEznfmNnpkQ==}
     dependencies:
       fast-xml-parser: 4.0.10
     dev: true
