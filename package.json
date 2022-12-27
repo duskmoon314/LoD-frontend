@@ -31,8 +31,8 @@
     "theme-change": "^2.2.0"
   },
   "devDependencies": {
-    "@astrojs/image": "^0.11.0",
-    "@astrojs/mdx": "^0.11.1",
+    "@astrojs/image": "^0.12.0",
+    "@astrojs/mdx": "^0.14.0",
     "@astrojs/react": "^1.1.4",
     "@astrojs/rss": "^1.0.1",
     "@astrojs/sitemap": "^1.0.0",
