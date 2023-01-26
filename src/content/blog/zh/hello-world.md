@@ -5,7 +5,6 @@ description: |
   这里会不定期更新藏书阁的搭建经验分享。
 author: 暮月
 createdAt: 2022-08-21
-layout: "@layouts/BlogPost.astro"
 ---
 
 # 技术选型

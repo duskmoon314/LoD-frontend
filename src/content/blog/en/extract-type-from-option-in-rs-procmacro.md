@@ -1,20 +1,19 @@
 ---
-title: 在 Rust 过程宏中从 `Option` 提取类型
+title: Extract type from `Option` in ProcMacro of Rust
 description: |
-  最近在学习 Rust 过程宏，努力完成 proc-macro-workshop 的练习。在练习中遇到了一个问题，就是如何从 Option 中提取类型。这里记录一下解决方法。
+  Recently I was learning Rust ProcMacro, and I was trying to complete the exercises of proc-macro-workshop. In the exercises, I encountered a problem, that is, how to extract the type from `Option`. Here I record the solution.
 author: 暮月
 createdAt: 2022-10-01
-layout: "@layouts/BlogPost.astro"
 tags:
   - Rust
   - ProcMacro
 ---
 
-在编写 Rust 过程宏的时候，一个很有可能遇到的情况是，我们需要从 `Option<T>` 中取出这个 `T`。但是 `Option` 的写法有很多，`syn` 解析基础的 `Option` 也会得到一个复杂的结构体，那么要如何正确的提取出 `T` 呢？
+In writing Rust ProcMacro, a situation that is very likely to be encountered is that we need to extract the `T` from `Option<T>`. But the writing of `Option` has many forms, and `syn` parses the basic `Option` to get a complex structure. How can we correctly extract `T`?
 
-## `Option` 的五种写法
+## Five ways to write `Option`
 
-目前，据我所知，`Option` 有五种写法。(当然，可以先 `use std::option` 再写 `option::Option`，但真的会有人这么干吗？）
+At present, as far as I know, there are five ways to write `Option`. (Of course, you can first `use std::option` and then write `option::Option`, but will anyone really do that?)
 
 ```rust
 struct FiveOption {
@@ -26,9 +25,9 @@ struct FiveOption {
 }
 ```
 
-这里偷一个懒，直接用了 `String` 作为 `T`，但是实际上，`T` 可以是任意类型。
+Here I am lazy and use `String` as `T`, but in fact, `T` can be any type.
 
-那么，`syn` 解析得到的结构体会是什么样的呢？（部分无用的信息已省略）
+Then, what will the structure obtained by `syn` parsing be like? (Some useless information has been omitted)
 
 ```rust
 option_t: Path(
@@ -42,7 +41,7 @@ option_t: Path(
             AngleBracketedGenericArguments {
               args: [
                 Type(
-                  // String 解析出来的内容
+                  // String's representation in syn
                 ),],},),},],},},)
 std_option_t: Path(
   TypePath {
@@ -59,7 +58,7 @@ std_option_t: Path(
             AngleBracketedGenericArguments {
               args: [
                 Type(
-                  // String 解析出来的内容
+                  // String's representation in syn
                 ),],},),},],},},)
 std_option_t_2: Path(
   TypePath {
@@ -77,7 +76,7 @@ std_option_t_2: Path(
             AngleBracketedGenericArguments {
               args: [
                 Type(
-                  // String 解析出来的内容
+                  // String's representation in syn
                 ),],},),},],},},)
 core_option_t: Path(
   TypePath {
@@ -94,7 +93,7 @@ core_option_t: Path(
             AngleBracketedGenericArguments {
               args: [
                 Type(
-                  // String 解析出来的内容
+                  // String's representation in syn
                 ),],},),},],},},)
 core_option_t_2: Path(
   TypePath {
@@ -112,39 +111,41 @@ core_option_t_2: Path(
             AngleBracketedGenericArguments {
               args: [
                 Type(
-                  // String 解析出来的内容
+                  // String's representation in syn
                 ),],},),},],},},)
 ```
 
-可以看出，他们都是 `PathSegment{ ident: Ident{ ident: "Option" }, arguments: AngleBracketed(...) }` 结尾的形式，我们是否可以逆向的匹配这一部分呢？如果仅匹配这一部分，对于形如 `Arc<Option<String>>` 的类型，我们会损失掉 `Arc` 的信息，这是不可取的。
+We can see that they are all in the form of `PathSegment{ ident: Ident{ ident: "Option" }, arguments: AngleBracketed(...) }` at the end. Can we match this part in reverse? If we only match this part, for types such as `Arc<Option<String>>`, we will lose the information of `Arc`, which is not acceptable.
 
-因此，我们的思路是从头开始，找出 `Option` `std::option::Option` `core::option::Option` 三种模式，然后取出 `T`。
+So our idea is to start from the beginning, find the three patterns of `Option` `std::option::Option` `core::option::Option`, and then take out `T`.
 
-## 实现 `fn extract_type_from_option`
+## Implement `fn extract_type_from_option`
 
-为了方便复用，我们把这个功能单独实现在一个函数 `extract_type_from_option` 中：
+To facilitate reuse, we implement this function in a function `extract_type_from_option`:
 
 ```rust
 fn extract_type_from_option(ty: &syn::Type) -> Option<&syn::Type> {
-    // 如果不是 TypePath，便不可能是 Option<T>，返回 None
+    // If it is not `TypePath`, it is not possible to be `Option<T>`, return `None`
     if let syn::Type::Path(syn::TypePath { qself: None, path }) = ty {
-        // 我们已经限定了 Option 的 5 种写法，观察可知到 Option 后便不会再有同一等级的 PathSegment
-        // 因此，我们只需取出最高等级的 PathSegment 并拼接为字符串，用于和分析结果进行比较
+        // We have limited the 5 ways to write `Option`, and we can see that after `Option`,
+        // there will be no `PathSegment` of the same level
+        // Therefore, we only need to take out the highest level `PathSegment` and splice it into a string
+        // for comparison with the analysis result
         let segments_str = &path
             .segments
             .iter()
             .map(|segment| segment.ident.to_string())
             .collect::<Vec<_>>()
             .join(":");
-        // 将 PathSegment 拼接为字符串，比较后取出 Option 所在的 PathSegment
+        // Concatenate `PathSegment` into a string, compare and take out the `PathSegment` where `Option` is located
         let option_segment = ["Option", "std:option:Option", "core:option:Option"]
             .iter()
             .find(|s| segments_str == *s)
             .and_then(|_| path.segments.last());
         let inner_type = option_segment
-            // 将 Option 所在 PathSegment 的泛型参数取出
-            // 如果不是泛型，便不可能是 Option<T>，返回 None
-            // 不过这种情况或许不应该出现
+            // Take out the generic parameters of the `PathSegment` where `Option` is located
+            // If it is not generic, it is not possible to be `Option<T>`, return `None`
+            // But this situation may not occur
             .and_then(|path_seg| match &path_seg.arguments {
                 syn::PathArguments::AngleBracketed(syn::AngleBracketedGenericArguments {
                     args,
@@ -152,20 +153,20 @@ fn extract_type_from_option(ty: &syn::Type) -> Option<&syn::Type> {
                 }) => args.first(),
                 _ => None,
             })
-            // 将泛型参数中的类型信息取出
-            // 如果不是类型，便不可能是 Option<T>，返回 None
-            // 不过这种情况或许不应该出现
+            // Take out the type information in the generic parameter
+            // If it is not a type, it is not possible to be `Option<T>`, return `None`
+            // But this situation may not occur
             .and_then(|generic_arg| match generic_arg {
                 syn::GenericArgument::Type(ty) => Some(ty),
                 _ => None,
             });
-        // 返回 Option<T> 中的 T
+        // Return `T` in `Option<T>`
         return inner_type;
     }
     None
 }
 ```
 
-# 参考
+# Reference
 
 1. [How can I get the T from an Option<T> when using syn? David Bernard's answer](https://stackoverflow.com/a/56264023/15766817)

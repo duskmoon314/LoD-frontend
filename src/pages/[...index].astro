@@ -3,25 +3,40 @@ import Base from "@layouts/Base.astro"
 import Icon from "astro-icon"
 import i18next, { t, changeLanguage } from "i18next"
 import { localizePath } from "astro-i18next"
+import { getCollection } from "astro:content"
 
-changeLanguage("en")
+// default language
+changeLanguage("zh")
 
-const posts =
-  i18next.language === "en"
-    ? (await Astro.glob("/src/pages/en/blog/*.{md,mdx}"))
-        .sort(
-          (a, b) =>
-            new Date(b.frontmatter.createdAt).valueOf() -
-            new Date(a.frontmatter.createdAt).valueOf()
-        )
-        .slice(0, 3)
-    : (await Astro.glob("/src/pages/blog/*.{md,mdx}"))
-        .sort(
-          (a, b) =>
-            new Date(b.frontmatter.createdAt).valueOf() -
-            new Date(a.frontmatter.createdAt).valueOf()
-        )
-        .slice(0, 3)
+export function getStaticPaths() {
+  return i18next.languages.map((lang) => {
+    return {
+      params: {
+        index: lang === "zh" ? undefined : lang,
+      },
+      props: {
+        lang,
+      },
+    }
+  })
+}
+
+const { lang } = Astro.props
+changeLanguage(lang)
+
+const posts = (
+  await getCollection("blog", ({ id }) => {
+    return id.startsWith(`${lang}/`)
+  })
+)
+  .sort((a, b) => b.data.createdAt.valueOf() - a.data.createdAt.valueOf())
+  .slice(0, 3)
+  .map((post) => {
+    return {
+      ...post,
+      slug: post.slug.split("/")[1],
+    }
+  })
 ---
 
 <Base title={t("site.title")} description={t("site.description")}>
@@ -46,9 +61,9 @@ const posts =
   <div class="hero min-h-half-screen bg-base-200">
     <div class="hero-content text-center">
       <div class="max-w-md">
-        <h1 class="text-5xl font-bold" set:html={t("site.title")}></h1>
+        <h1 class="text-5xl font-bold" set:html={t("site.title")} />
 
-        <p class="py-6" set:html={t("site.description")}></p>
+        <p class="py-6" set:html={t("site.description")} />
       </div>
     </div>
   </div>
@@ -58,13 +73,13 @@ const posts =
   >
     <div class="avatar">
       <div class="w-32 h-32 rounded-full shadow-2xl">
-        <img src="/icon.png" alt="暮月的Logo" />
+        <img src="/icon.png" alt="Logo" />
       </div>
     </div>
     <div class="card w-4/5 lg:w-3/5 bg-base-100 shadow-2xl">
       <div class="card-body">
-        <div set:html={t("home.intro")}></div>
-        <div set:html={t("home.license")}></div>
+        <div set:html={t("home.intro")} />
+        <div set:html={t("home.license")} />
         <div class="divider"></div>
         <div class="card-actions justify-end flex-col lg:flex-row">
           <div class="flex flex-grow flex-row justify-start">
@@ -110,24 +125,27 @@ const posts =
         const currerent_element = (
           <div class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box w-full">
             <input type="checkbox" class="peer" />
-            <div class="collapse-title text-base-content peer-checked:bg-base-200 prose flex justify-between">
-              <h2 class="m-0">{curr.frontmatter.title}</h2>
+            <div class="collapse-title text-base-content peer-checked:bg-base-200 prose flex flex-col gap-4 justify-between">
+              <h3 class="m-0">{curr.data.title}</h3>
               <div class="flex gap-2">
-                {(curr.frontmatter.tags ?? []).map((tag: string) => (
+                {(curr.data.tags ?? []).map((tag: string) => (
                   <div class="badge badge-outline">{tag}</div>
                 ))}
               </div>
             </div>
             <div class="collapse-content text-base-content peer-checked:bg-base-200 peer-checked:text-base-content">
-              <p set:html={curr.frontmatter.description} />
+              <p set:html={curr.data.description} />
               <div class="flex justify-between items-center">
                 <p class="prose-neutral">
                   {t("updated-at")}
                   {new Date(
-                    curr.frontmatter.updatedAt ?? curr.frontmatter.createdAt
+                    curr.data.updatedAt ?? curr.data.createdAt
                   ).toLocaleDateString()}
                 </p>
-                <a href={curr.url} class="btn btn-primary btn-sm">
+                <a
+                  href={localizePath(`/blog/${curr.slug}`)}
+                  class="btn btn-primary btn-sm"
+                >
                   {t("home.read-more")}
                 </a>
               </div>

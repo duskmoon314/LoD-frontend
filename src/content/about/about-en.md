@@ -1,5 +1,4 @@
 ---
-layout: "@layouts/BlogPost.astro"
 title: "About me"
 description: "A resume-like self-introduction"
 createdAt: "2022-08-21"
@@ -15,9 +14,9 @@ createdAt: "2022-08-21"
 
 ## OS
 
-| For Dev                                                                                                                                                                                                                 | For entertaining                                                                                         | VM                                                                                                    |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| ![MacOS](<https://img.shields.io/badge/mac%20os%20(M1)-000000?style=for-the-badge&logo=apple&logoColor=white>) ![manjaro](https://img.shields.io/badge/manjaro-35BF5C?style=for-the-badge&logo=manjaro&logoColor=white) | ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white) | ![docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white) |
+| For Dev                                                                                                        | For entertaining                                                                                         | VM                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| ![MacOS](<https://img.shields.io/badge/mac%20os%20(M1)-000000?style=for-the-badge&logo=apple&logoColor=white>) | ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white) | ![docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white) |
 
 # Recent Activities
 

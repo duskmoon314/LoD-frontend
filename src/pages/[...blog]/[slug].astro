@@ -1,0 +1,33 @@
+---
+import { changeLanguage } from "i18next"
+import { CollectionEntry, getCollection } from "astro:content"
+import BlogPost from "@layouts/BlogPost.astro"
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blog")
+  return blogEntries.map((entry) => {
+    const [lang, slug] = entry.slug.split("/")
+    return {
+      params: {
+        blog: lang === "zh" ? "blog" : `${lang}/blog`,
+        slug,
+      },
+      props: {
+        entry,
+        lang,
+      },
+    }
+  })
+}
+
+const { lang, entry } = Astro.props as {
+  entry: CollectionEntry<"blog">
+  lang: string
+}
+changeLanguage(lang)
+const { Content, headings } = await entry.render()
+---
+
+<BlogPost content={entry.data} headings={headings}>
+  <Content />
+</BlogPost>

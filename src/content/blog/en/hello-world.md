@@ -5,7 +5,6 @@ description: |
   Here will be updated the experience of building LoD.
 author: Duskmoon
 createdAt: 2022-08-21
-layout: "@layouts/BlogPost.astro"
 ---
 
 # Tech Selection

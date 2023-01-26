@@ -4,7 +4,6 @@ description: |
   Relearned the classic Hamming code recently. Share the process and principles here.
 author: Duskmoon
 createdAt: 2022-08-25
-layout: "@layouts/BlogPost.astro"
 tags:
   - Encode
 ---

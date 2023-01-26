@@ -7,14 +7,14 @@ export interface Props {
     title: string
     description: string
     author?: string
-    createdAt?: string
-    updatedAt?: string
+    createdAt?: Date
+    updatedAt?: Date
     heroImage?: string
   }
 }
 
 const {
-  content: { title, description, author, createdAt, updatedAt, heroImage },
+  content: { title, description, author, heroImage },
 } = Astro.props as Props
 ---
 
@@ -45,8 +45,7 @@ const {
         </div>
       )
     }
-    <!-- <section></section> -->
-    <section class="m-8 prose w-4/5 self-center">
+    <section class="m-8 prose prose-headings:scroll-mt-20 w-4/5 self-center">
       <slot />
     </section>
     <section class="m-8 w-4/5 max-w-3xl self-center">

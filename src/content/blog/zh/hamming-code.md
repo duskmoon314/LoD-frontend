@@ -4,7 +4,6 @@ description: |
   近日重新学习了经典的汉明纠错码，在此分享一下其编解码的过程和原理。
 author: 暮月
 createdAt: 2022-08-25
-layout: "@layouts/BlogPost.astro"
 tags:
   - 编码
 ---

@@ -1,5 +1,5 @@
 {
-  "conventionalCommits.scopes": ["blog"],
+  "conventionalCommits.scopes": ["blog", "deps"],
   "cSpell.words": ["astro", "astrojs"],
   "editor.tabSize": 2,
   "markdown.experimental.validate.fileLinks.enabled": "ignore",
