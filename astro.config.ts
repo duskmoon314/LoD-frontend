@@ -7,11 +7,7 @@ import react from "@astrojs/react"
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://duskmoon314.com",
-  // @ts-ignore
-  experimental: {
-    integrations: true,
-  },
+  site: "https://duskmoon314.com/",
   integrations: [
     sitemap({
       i18n: {
