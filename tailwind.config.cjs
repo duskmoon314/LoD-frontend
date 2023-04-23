@@ -21,6 +21,8 @@ module.exports = {
               margin: "auto",
               maxWidth: "100%",
             },
+            "blockquote p:first-of-type::before": { content: "none" },
+            "blockquote p:first-of-type::after": { content: "none" },
           },
         },
       },
