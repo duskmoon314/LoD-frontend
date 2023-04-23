@@ -39,7 +39,10 @@ const posts = (
   })
 ---
 
-<Base title={t("site.title")} description={t("site.description")}>
+<Base
+  title={t("site:title") as string}
+  description={t("site:description") as string}
+>
   <div class="alert alert-warning shadow-lg place-content-center">
     <div>
       <svg
@@ -54,16 +57,16 @@ const posts = (
           d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
         ></path>
       </svg>
-      <span>{t("alert")}</span>
+      <span>{t("site:alert")}</span>
     </div>
   </div>
 
   <div class="hero min-h-half-screen bg-base-200">
     <div class="hero-content text-center">
       <div class="max-w-md">
-        <h1 class="text-5xl font-bold" set:html={t("site.title")} />
+        <h1 class="text-5xl font-bold" set:html={t("site:title")} />
 
-        <p class="py-6" set:html={t("site.description")} />
+        <p class="py-6" set:html={t("site:description")} />
       </div>
     </div>
   </div>
@@ -78,19 +81,19 @@ const posts = (
     </div>
     <div class="card w-4/5 lg:w-3/5 bg-base-100 shadow-2xl">
       <div class="card-body">
-        <div set:html={t("home.intro")} />
-        <div set:html={t("home.license")} />
+        <div set:html={t("home:intro")} />
+        <div set:html={t("home:license")} />
         <div class="divider"></div>
         <div class="card-actions justify-end flex-col lg:flex-row">
           <div class="flex flex-grow flex-row justify-start">
-            <p>{t("home.who-am-i")}</p>
+            <p>{t("home:who-am-i")}</p>
             <a class="link link-primary" href={localizePath("/about")}
-              >{t("home.about-me")}
+              >{t("home:about-me")}
             </a>
           </div>
           <div class="divider lg:divider-horizontal"></div>
           <div class="flex flex-grow flex-row">
-            <p>{t("home.contact-me")}</p>
+            <p>{t("home:contact-me")}</p>
             <div class="flex flex-row gap-4 justify-self-end">
               <a
                 href="https://matrix.to/#/@duskmoon:matrix.org"
@@ -119,7 +122,7 @@ const posts = (
   <div
     class="flex flex-col gap-0 mt-4 mb-8 items-center self-center prose w-4/5"
   >
-    <h2>{t("home.recent-posts")}</h2>
+    <h2>{t("home:recent-posts")}</h2>
     {
       posts.reduce((prev: Element[], curr, idx) => {
         const currerent_element = (
@@ -137,7 +140,7 @@ const posts = (
               <p set:html={curr.data.description} />
               <div class="flex justify-between items-center">
                 <p class="prose-neutral">
-                  {t("updated-at")}
+                  {t("blog:updated-at")}
                   {new Date(
                     curr.data.updatedAt ?? curr.data.createdAt
                   ).toLocaleDateString()}
@@ -146,7 +149,7 @@ const posts = (
                   href={localizePath(`/blog/${curr.slug}`)}
                   class="btn btn-primary btn-sm"
                 >
-                  {t("home.read-more")}
+                  {t("home:read-more")}
                 </a>
               </div>
             </div>
@@ -158,7 +161,7 @@ const posts = (
       }, [])
     }
     <a href={localizePath("/blog")} class="btn btn-primary mt-8">
-      {t("home.view-all")}
+      {t("home:view-all")}
     </a>
   </div>
 </Base>

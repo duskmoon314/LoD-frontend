@@ -13,19 +13,19 @@ const navItems: Array<{
   href: string
 }> = [
   {
-    title: t("site.nav.home"),
+    title: t("site:nav.home"),
     href: localizePath("/"),
   },
   {
-    title: t("site.nav.about"),
+    title: t("site:nav.about"),
     href: localizePath("/about"),
   },
   {
-    title: t("site.nav.blog"),
+    title: t("site:nav.blog"),
     href: localizePath("/blog"),
   },
   // {
-  //   title: t("site.nav.project"),
+  //   title: t("site:nav.project"),
   //   href: localizePath("/project"),
   // },
 ]
@@ -51,7 +51,7 @@ const navItems: Array<{
         </div>
       </div>
       <a class="prose" href={localizePath("/")}>
-        <h3>{t("site.title")}</h3>
+        <h3>{t("site:title")}</h3>
       </a>
     </div>
   </div>
@@ -63,7 +63,7 @@ const navItems: Array<{
         </div>
       </div>
       <a class="prose" href={localizePath("/")}>
-        <h3>{t("site.title")}</h3>
+        <h3>{t("site:title")}</h3>
       </a>
     </div>
     <nav class="tabs hidden lg:flex">

@@ -1,0 +1,10 @@
+{
+  "intro": "<h2 class=\"card-title\">你好，我是暮月</h2><p>欢迎来到我的个人小站“<b>暮月的藏书阁</b>”。</p><p>我是清华大学的在读博士生，也是在尝试积极参与开源社区的菜鸟。</p><p>这里收录的是我的一些杂记、随笔和维护的项目的介绍。</p>",
+  "license": "除非特殊说明，本网站的所有文字内容采用<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/4.0/\" class=\"link link-primary\">知识共享署名-相同方式共享 4.0 国际许可协议</a>进行许可。<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/4.0/\"><img alt=\"知识共享许可协议\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by-sa/4.0/80x15.png\" /></a>",
+  "who-am-i": "我是谁？",
+  "about-me": "关于我",
+  "contact-me": "联系我?",
+  "read-more": "阅读更多",
+  "recent-posts": "近期文章",
+  "view-all": "查看全部"
+}

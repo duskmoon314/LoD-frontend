@@ -1,0 +1,11 @@
+{
+  "title": "Lib of Duskmoon",
+  "description": "Duskmoon's personal site, including some notes, blogs and projects.<br />てへぺろ(・ω<)",
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "blog": "Blog",
+    "project": "Project"
+  },
+  "alert": "The site has just been built, and there is still much content that has not been carefully adjusted or implemented. Please forgive me."
+}
