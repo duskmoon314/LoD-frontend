@@ -5,6 +5,7 @@
       site_id: "lod",
       components: ["embed"],
       theme: localStorage.getItem("theme") === "night" ? "dark" : "light",
+      locale: document.documentElement.lang,
     }
 
     !(function (e, n) {
