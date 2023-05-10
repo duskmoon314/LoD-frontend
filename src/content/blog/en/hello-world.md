@@ -1,10 +1,11 @@
 ---
 title: Hello, World
 description: |
-  LoD is finally built<br/>
+  LoD is finally built
   Here will be updated the experience of building LoD.
 author: Duskmoon
 createdAt: 2022-08-21
+updatedAt: 2023-05-10
 ---
 
 # Tech Selection

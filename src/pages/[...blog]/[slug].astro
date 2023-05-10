@@ -25,9 +25,9 @@ const { lang, entry } = Astro.props as {
   lang: string
 }
 changeLanguage(lang)
-const { Content, headings } = await entry.render()
+const { Content } = await entry.render()
 ---
 
-<BlogPost content={entry.data} headings={headings}>
+<BlogPost content={entry.data}>
   <Content />
 </BlogPost>

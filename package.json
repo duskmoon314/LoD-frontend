@@ -11,7 +11,8 @@
     "astro": "astro",
     "fmt": "prettier -w --plugin-search-dir=. .",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx,.astro .",
-    "gen-local": "astro-i18next generate"
+    "gen-local": "astro-i18next generate",
+    "clean": "rm -rf .astro dist"
   },
   "dependencies": {
     "@algolia/client-search": "^4.17.0",
@@ -41,7 +42,7 @@
     "@tailwindcss/typography": "^0.5.9",
     "@types/react": "^18.0.37",
     "@typescript-eslint/parser": "^5.59.0",
-    "astro": "^2.3.0",
+    "astro": "^2.4.3",
     "astro-i18next": "1.0.0-beta.21",
     "autoprefixer": "^10.4.14",
     "daisyui": "^2.51.5",
