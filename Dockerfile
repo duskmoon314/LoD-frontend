@@ -3,12 +3,10 @@ FROM node:lts-alpine AS builder
 WORKDIR /home/node/app
 
 RUN npm i -g pnpm
-COPY package.json pnpm-lock.yaml ./
-RUN pnpm fetch
 
 COPY . .
 
-RUN pnpm install --offline || pnpm install
+RUN pnpm install --frozen-lockfile
 RUN pnpm build
 
 FROM svenstaro/miniserve:alpine AS app
