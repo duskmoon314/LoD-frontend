@@ -95,12 +95,20 @@ const posts = (
           <div class="flex flex-grow flex-row">
             <p>{t("home:contact-me")}</p>
             <div class="flex flex-row gap-4 justify-self-end">
-              <a
-                href="https://matrix.to/#/@duskmoon:matrix.org"
-                class="text-inherit"
+              <div class="tooltip tooltip-bottom" data-tip="HAM Radio: BI1PJQ">
+                <Icon class="w-6" name="mdi:radio-tower" />
+              </div>
+              <div
+                class="tooltip tooltip-bottom"
+                data-tip={t("home:matrix-note")}
               >
-                <Icon class="w-6" name="simple-icons:matrix" />
-              </a>
+                <a
+                  href="https://matrix.to/#/@duskmoon:matrix.org"
+                  class="text-inherit"
+                >
+                  <Icon class="w-6" name="simple-icons:matrix" />
+                </a>
+              </div>
               <a
                 href="mailto:kp.campbell.he@duskmoon314.com"
                 class="text-inherit"
