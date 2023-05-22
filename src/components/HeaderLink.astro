@@ -6,11 +6,7 @@ export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {
 }
 
 const { href, class: className, menu, ...props } = Astro.props as Props
-const isActive =
-  (["/", "/en/"].includes(href!.toString()) &&
-    ["/", "/en", "/en/"].includes(Astro.url.pathname)) ||
-  (!["/", "/en/"].includes(href!.toString()) &&
-    Astro.url.pathname.startsWith(localizePath(href!.toString())))
+const isActive = Astro.url.pathname === href
 ---
 
 {
