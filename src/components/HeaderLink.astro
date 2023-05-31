@@ -6,11 +6,10 @@ export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {
 }
 
 const { href, class: className, menu, ...props } = Astro.props as Props
-// remove trailing slash if not only slash
 const isActive =
-  Astro.url.pathname.length > 1
-    ? Astro.url.pathname.replace(/\/$/, "") === href
-    : Astro.url.pathname === href
+  href === localizePath("/")
+    ? Astro.url.pathname === href
+    : Astro.url.pathname.startsWith(localizePath(href as string))
 ---
 
 {
