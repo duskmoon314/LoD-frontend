@@ -53,7 +53,7 @@
     "remark-rehype": "^10.1.0",
     "remark-smartypants": "^2.0.0",
     "remark-toc": "^8.0.1",
-    "rollup": "^3.21.6",
+    "rollup": "^4.0.0",
     "serve": "^14.2.0",
     "svelte": "^3.59.1",
     "tailwindcss": "^3.3.2",
