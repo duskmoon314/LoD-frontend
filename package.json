@@ -39,7 +39,7 @@
     "i18next-fs-backend": "^2.1.1",
     "iconify-icon": "^1.0.7",
     "locale-emoji": "^0.3.0",
-    "postcss": "^8.4.23",
+    "postcss": "^8.4.31",
     "prettier": "^2.8.8",
     "prettier-plugin-astro": "^0.8.0",
     "react": "^18.2.0",
