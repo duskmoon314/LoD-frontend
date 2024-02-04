@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@algolia/client-search':
     specifier: ^4.17.0
@@ -68,8 +72,8 @@ dependencies:
     specifier: ^2.1.1
     version: 2.1.1
   iconify-icon:
-    specifier: ^1.0.7
-    version: 1.0.7
+    specifier: ^2.0.0
+    version: 2.0.0
   locale-emoji:
     specifier: ^0.3.0
     version: 0.3.0
@@ -3743,8 +3747,8 @@ packages:
       '@babel/runtime': 7.21.5
     dev: false
 
-  /iconify-icon@1.0.7:
-    resolution: {integrity: sha512-MxaO3Jhf3f5ymPWGHR9x74f90TNKcq1D+B2iGucGhVtqAgbC9EtM06kKiTGH2CKELNnexckwhrA3/+OpT4HKFw==}
+  /iconify-icon@2.0.0:
+    resolution: {integrity: sha512-38ArOkxmyD9oDbJBkxaFpE6eZ0K3F9Sk+3x4mWGfjMJaxi3EKrix9Du4iWhgBFT3imKC4FJJE34ur2Rc7Xm+Uw==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: false
